@@ -1,0 +1,26 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/nav_calls"
+        android:icon="@drawable/color_imagehome"
+        android:title="HOME"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/nav_Lead"
+        android:icon="@drawable/leadsimgs"
+        android:title="Leads"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/nav_Followups"
+        android:icon="@drawable/followupimage"
+        android:title="FollowUps"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/nav_topper"
+        android:icon="@drawable/leaderboardimg"
+        android:title="Toppers"
+        app:showAsAction="ifRoom" />
+
+</menu>

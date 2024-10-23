@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+   >
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/baseappcolor"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+
+        <!-- ImageView for opening the drawer -->
+
+        <ImageView
+            android:id="@+id/editprofile_backbutton_img"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/backbutton"
+            android:contentDescription="@string/navigation_drawer_open"
+            android:padding="8dp"
+            android:layout_gravity="start"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"/>
+
+        <RelativeLayout
+            android:id="@+id/usernsamelayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+
+            android:layout_centerVertical="true"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edit profile"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="32sp"
+                android:gravity="center_horizontal"/>
+
+
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+    <ImageView
+        android:id="@+id/editprofileImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/profileimg"
+        android:scaleType="fitXY"
+        android:padding="10dp"
+        android:background="@drawable/circular_ring"
+        android:contentDescription="Profile Image"
+        android:layout_gravity="center"
+
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/buttonChoosePhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose Photo"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Email EditText -->
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/editTextEmail"
+        android:layout_margin="10dp"
+        android:inputType="text"
+        android:paddingStart="20dp"
+        android:fontFamily="@font/inter_regular"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/black"
+        android:hint="Email"
+        android:textColorHint="@color/black"
+        android:background="@drawable/boarder" />
+
+    <!-- Current Password EditText -->
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/editTextCurrentPassword"
+        android:inputType="textPassword"
+        android:layout_margin="10dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/inter_regular"
+        android:hint="Current Password"
+        android:paddingStart="20dp"
+        android:layout_marginTop="40dp"
+        android:textColorHint="@color/black"
+        android:background="@drawable/boarder" />
+
+    <!-- New Password EditText -->
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/editTextNewPassword"
+        android:inputType="textPassword"
+        android:layout_margin="10dp"
+        android:textColor="@color/black"
+        android:hint="New Password"
+        android:paddingStart="20dp"
+        android:fontFamily="@font/inter_regular"
+        android:layout_marginTop="40dp"
+        android:textColorHint="@color/black"
+        android:background="@drawable/boarder" />
+
+    <!-- Confirm Password EditText -->
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/editTextConfirmPassword"
+        android:inputType="textPassword"
+        android:layout_margin="10dp"
+        android:fontFamily="@font/inter_regular"
+        android:textColor="@color/black"
+        android:hint="Confirm Password"
+        android:paddingStart="20dp"
+        android:layout_marginTop="40dp"
+        android:textColorHint="@color/black"
+        android:background="@drawable/boarder" />
+
+    <!-- Save Button -->
+    <Button
+        android:id="@+id/buttonUpdateProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:fontFamily="@font/inter_regular"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp" />
+
+</LinearLayout>

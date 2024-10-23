@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn = "navigation_view">
+
+    <group
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nv_home"
+            android:icon="@drawable/color_imagehome"
+            android:title="Home"/>
+
+        <item
+            android:id="@+id/nv_followup"
+            android:icon="@drawable/followupimage"
+            android:title="FollowUps"/>
+
+        <item
+            android:id="@+id/nv_toppers"
+            android:icon="@drawable/leaderboardimg"
+            android:title="LeaderBoard"/>
+        <item
+            android:id="@+id/nv_deal"
+            android:icon="@drawable/dealsimages"
+            android:title="Deals"/>
+        <item
+            android:id="@+id/nv_leads"
+            android:icon="@drawable/leadsimgs"
+            android:title="Leads"/>
+        <item
+            android:id="@+id/nv_changepass"
+            android:icon="@drawable/changpassword"
+            android:title="Change Password"/>
+        <item
+            android:id="@+id/nv_reports"
+            android:icon="@drawable/reportsimg"
+            android:title="My Reports"/>
+    </group>
+
+
+
+</menu>

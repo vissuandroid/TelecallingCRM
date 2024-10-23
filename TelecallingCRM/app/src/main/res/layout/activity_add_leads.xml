@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.pixl.crm.activity.AddLeadsActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/bottominfo_toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/appbar_background"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:elevation="4dp">
+
+        <ImageView
+            android:id="@+id/backArrowImageView"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/backbutton"
+            android:layout_gravity="start|center_vertical"
+            android:layout_marginStart="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Add Lead"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"/>
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <!-- Name EditText -->
+            <EditText
+                android:id="@+id/nameEditText"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:hint="Name"
+                android:paddingStart="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/edittext_background"
+                app:layout_constraintTop_toBottomOf="@id/bottominfo_toolbar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- Phone Number EditText -->
+            <EditText
+                android:id="@+id/phoneNumberEditText"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:hint="Phone Number"
+                android:inputType="phone"
+                android:paddingStart="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/edittext_background"
+                app:layout_constraintTop_toBottomOf="@id/nameEditText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- Follow-up Date EditText (Date Picker) -->
+            <EditText
+                android:id="@+id/datePickerEditText"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:hint="Follow-up Date"
+                android:layout_marginTop="15dp"
+                android:paddingStart="20dp"
+                android:drawableEnd="@drawable/baseline_calendar_month_24"
+                android:layout_marginHorizontal="15dp"
+                android:paddingEnd="10dp"
+                android:background="@drawable/edittext_background"
+                app:layout_constraintTop_toBottomOf="@id/phoneNumberEditText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:focusable="false"
+                android:clickable="true"/>
+
+            <!-- Radio Buttons for Option Selection -->
+
+            <!-- Remarks EditText -->
+            <EditText
+                android:id="@+id/remarksEditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Remarks"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/edittext_background"
+                android:lines="4"
+                android:paddingStart="20dp"
+                app:layout_constraintTop_toBottomOf="@id/datePickerEditText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- Lead Status Radio Buttons -->
+            <RadioGroup
+                android:id="@+id/leadStatusRadioGroup"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp"
+                android:layout_marginHorizontal="15dp"
+                app:layout_constraintTop_toBottomOf="@id/remarksEditText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <RadioButton
+                    android:id="@+id/coldRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="Cold"/>
+
+                <RadioButton
+                    android:id="@+id/hotRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_marginStart="10dp"
+                    android:text="Hot"/>
+
+                <RadioButton
+                    android:id="@+id/warmRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:textStyle="bold"
+                    android:text="Warm"/>
+            </RadioGroup>
+
+            <!-- Update Button -->
+            <Button
+                android:id="@+id/updateButton"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:text="Submit"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="30dp"
+                android:paddingBottom="10dp"
+                android:backgroundTint="#7165E3"
+                android:textColor="@android:color/white"
+                app:layout_constraintTop_toBottomOf="@id/leadStatusRadioGroup"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

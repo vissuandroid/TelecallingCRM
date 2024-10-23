@@ -1,0 +1,416 @@
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/callsdrawer_layout"
+    android:background="@color/white">
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_view_containers"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <!-- Wrap your main content in SwipeRefreshLayout -->
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Main content container -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- App bar (Toolbar) -->
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/app_bar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/baseappcolor"
+                android:elevation="4dp"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+                <!-- Drawer icon (logo) -->
+                <ImageView
+                    android:id="@+id/telelogo"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/logooooooooo"
+                    android:contentDescription="@string/navigation_drawer_open"
+                    android:layout_gravity="start"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"/>
+
+                <!-- User info layout -->
+                <RelativeLayout
+                    android:id="@+id/usernsamelayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_toRightOf="@id/telelogo"
+                    android:layout_centerVertical="true"
+                    android:padding="5dp">
+
+                    <!-- Username -->
+                    <TextView
+                        android:id="@+id/username"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hi "
+                        android:fontFamily="@font/inter_medium"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:gravity="center_horizontal"/>
+
+                    <!-- Name text -->
+                    <TextView
+                        android:id="@+id/nameText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/username"
+                        android:text=""
+                        android:fontFamily="@font/inter_medium"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:gravity="center_horizontal"/>
+                </RelativeLayout>
+
+                <!-- Toolbar icons (right) -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <!-- Logout button -->
+                    <ImageView
+                        android:id="@+id/callspowericon"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/powerbtn"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_alignParentEnd="true"
+                        android:contentDescription="@string/navigation_drawer_open"
+                        android:padding="8dp"/>
+
+                    <!-- Hamburger menu icon -->
+                    <ImageView
+                        android:id="@+id/callshamburger_icon"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="14dp"
+                        android:layout_toStartOf="@id/callspowericon"
+                        android:contentDescription="@string/navigation_drawer_open"
+                        android:padding="8dp"
+                        android:src="@drawable/baseline_menu_24" />
+                </RelativeLayout>
+            </androidx.appcompat.widget.Toolbar>
+
+            <!-- Dashboard cards -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/app_bar"
+                android:id="@+id/dashcardlayout">
+
+                <!-- Top row of cards -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:id="@+id/linear1"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp">
+
+                    <!-- Completed calls card -->
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="0dp"
+                        android:layout_height="135dp"
+                        android:layout_marginEnd="2dp"
+                        android:layout_weight="1"
+                        android:id="@+id/completedcalls_lay"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="7dp"
+                        android:background="@drawable/rounded_card1"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <!-- Completed calls count -->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:id="@+id/completedcallscount_txt"
+                            android:fontFamily="@font/inter_medium"
+                            android:textColor="@color/black"
+                            android:layout_marginTop="5dp"
+                            android:textAlignment="center"
+                            android:textSize="46sp" />
+
+                        <!-- Completed calls label -->
+                        <TextView
+                            android:id="@+id/completedcalls_txt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter_regular"
+                            android:text="Today Calls"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <!-- Pending calls card -->
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/pendingcalls_Lay"
+                        android:layout_width="0dp"
+                        android:layout_height="135dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="10dp"
+                        android:orientation="vertical"
+                        android:layout_marginTop="7dp"
+                        android:background="@drawable/rounded_card2"
+                        android:padding="10dp">
+
+                        <!-- Pending calls count -->
+                        <TextView
+                            android:id="@+id/pendingcallscount_txt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="0"
+                            android:fontFamily="@font/inter_medium"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="46sp" />
+
+                        <!-- Pending calls label -->
+                        <TextView
+                            android:id="@+id/pendingcalls_txt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Pending Calls"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/inter_regular"
+                            android:textSize="16sp" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </LinearLayout>
+
+                <!-- Bottom row of cards -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_below="@+id/linear1"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15dp">
+
+                    <!-- Leads card -->
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="0dp"
+                        android:layout_height="135dp"
+                        android:layout_marginEnd="2dp"
+                        android:layout_weight="1"
+                        android:id="@+id/canceldelivery_Lay"
+                        android:background="@drawable/rounded_card3"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <!-- Leads count -->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:id="@+id/intrestedcallscount_txt"
+                            android:textAlignment="center"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="@font/inter_medium"
+                            android:textColor="@color/black"
+                            android:textSize="46sp" />
+
+                        <!-- Leads label -->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Leads"
+                            android:gravity="center"
+                            android:id="@+id/intreastedcalls_txt"
+                            android:fontFamily="@font/inter_regular"
+                            android:textColor="@color/black"
+                            android:textAlignment="center"
+                            android:textSize="16sp" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <!-- Follow-ups card -->
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/returndelivery_Lay"
+                        android:layout_width="0dp"
+                        android:layout_height="135dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/rounded_card4"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <!-- Follow-ups count -->
+                        <TextView
+                            android:id="@+id/notintreastedcallscount_txt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="0"
+                            android:fontFamily="@font/inter_medium"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="46sp" />
+
+                        <!-- Follow-ups label -->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Follow ups"
+                            android:id="@+id/notintreastedcalls_txt"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/inter_regular"
+                            android:textAlignment="center"
+                            android:textSize="16sp" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <!-- Button layout -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dashcardlayout"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="90dp"
+                android:layout_marginEnd="90dp"
+                android:gravity="center_horizontal"
+                android:id="@+id/pausestartbtn_layout"
+                android:orientation="horizontal">
+
+                <!-- Start Now Button -->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/startNowButton"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:layout_margin="8dp"
+                    android:fontFamily="@font/inter_semibold"
+                    android:textSize="18sp"
+                    android:text="Start Now"
+                    android:visibility="gone"
+                    android:background="@drawable/buttonbackground"
+                    android:textColor="@color/white" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/pauseResumeButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="8dp"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:text="Pause"
+                    android:visibility="gone"
+                    android:background="@drawable/buttonbackground"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+
+            <!-- Timer TextView -->
+            <TextView
+                android:id="@+id/timerTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/pausestartbtn_layout"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                android:text="Next call in 0 seconds"
+                android:textSize="18sp"
+                android:textColor="#000000" />
+
+            <!-- Queue TextView -->
+            <TextView
+                android:id="@+id/queTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/timerTextView"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/inter_medium"
+                android:text="Calls in Queue "
+                android:textSize="24sp"
+                android:textColor="#000000" />
+
+            <!-- Phone numbers list -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_below="@id/queTextView">
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/jsonImageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:lottie_rawRes="@raw/nodata1"
+                    app:lottie_autoPlay="true"
+                    android:visibility="gone"
+                    app:lottie_loop="true" />
+
+                <!-- ImageView to display JSON image -->
+<!--                <pl.droidsonroids.gif.GifImageView-->
+<!--                    android:id="@+id/jsonImageView"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:scaleType="fitEnd"-->
+<!--                    android:src="@drawable/nodatagif"-->
+<!--                    android:visibility="gone" />-->
+
+                <!-- Existing RecyclerView -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/phoneNumbersRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginEnd="7dp"
+                    tools:itemCount="2"
+                    android:background="@color/white"
+                    android:layout_marginTop="10dp" />
+
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <!-- Navigation drawer -->
+
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/callsnav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/nav_header"
+        app:itemIconTint="@color/baseappcolor"
+        app:itemTextColor="@color/baseappcolor"
+        app:menu="@menu/sidenav_menu"/>
+
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+</androidx.drawerlayout.widget.DrawerLayout>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:background="@color/white"
+    android:gravity="center_horizontal"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@+id/usernsamelayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="140dp"
+            android:text="Hello! "
+            android:layout_marginStart="25dp"
+            android:gravity="center_horizontal"
+            android:textColor="#F2070909"
+            android:textSize="32sp" />
+
+        <TextView
+            android:id="@+id/nameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/username"
+            android:gravity="center_horizontal"
+            android:layout_toRightOf="@id/username"
+            android:text="Buddy"
+            android:textColor="#F2070909"
+            android:textSize="32dp" />
+
+
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/usernsamelayout">
+        <TextView
+            android:id="@+id/callLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/username"
+            android:text="You have"
+            android:gravity="center_horizontal"
+            android:textColor="@color/apptext"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/callCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/callLabel"
+            android:layout_marginStart="5dp"
+            android:layout_toRightOf="@id/callLabel"
+            android:text="no"
+            android:textStyle="bold"
+            android:textColor="#F21DA69A"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/call"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/callCount"
+            android:layout_marginStart="4dp"
+            android:layout_toRightOf="@id/callCount"
+            android:text="calls to make"
+            android:textColor="@color/apptext"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/centerImage"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/usernsamelayout"
+        android:src="@drawable/wellcomescreen" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/centerImage">
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
+
