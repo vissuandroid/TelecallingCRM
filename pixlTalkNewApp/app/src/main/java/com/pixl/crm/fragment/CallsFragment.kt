@@ -43,11 +43,11 @@ import com.example.pixlcallcenterapp.responces.Numberlist_Response
 import com.example.pixlcallcenterapp.responces.UserHomescreenResponse
 import com.facebook.shimmer.ShimmerFrameLayout
 import com.google.android.material.navigation.NavigationView
+import com.pixl.crm.MainActivity
 import com.pixl.crm.activity.FollowupActivity
-import com.telecalling.crm.NavigationCommunicator
+import com.pixl.pixltalknewapp.R
 import com.telecalling.crm.NetworkUtils.isNetworkAvailable
 import com.telecalling.crm.NoInternetActivity
-import com.telecalling.crm.R
 import com.telecalling.crm.activity.Intrestedcalls_Activity
 import com.telecalling.crm.activity.LoginActivity
 import com.telecalling.crm.adapter.PhoneNumbersAdapter
@@ -78,7 +78,7 @@ class CallsFragment : Fragment(),NavigationView.OnNavigationItemSelectedListener
     private lateinit var countdownTimer: CountDownTimer
     private lateinit var completedcounttxt: TextView
     private lateinit var pendingcounttxt: TextView
-//    private lateinit var nodatalistimg: GifImageView
+    //    private lateinit var nodatalistimg: GifImageView
     private lateinit var lottieAnimationView: LottieAnimationView
 
 
@@ -97,7 +97,7 @@ class CallsFragment : Fragment(),NavigationView.OnNavigationItemSelectedListener
     private lateinit var powerlogout: ImageView
     private lateinit var phoneNumbersAdapter: PhoneNumbersAdapter
     private val RECORD_AUDIO_PERMISSION_REQUEST_CODE = 1002
-    private var navigationCommunicator: NavigationCommunicator? = null
+    private var navigationCommunicator: MainActivity.NavigationCommunicator? = null
     private lateinit var swipeRefreshLayout: SwipeRefreshLayout
     private lateinit var progressBar: ProgressBar
     private lateinit var profileImageView: de.hdodenhof.circleimageview.CircleImageView
@@ -117,7 +117,7 @@ class CallsFragment : Fragment(),NavigationView.OnNavigationItemSelectedListener
     override fun onAttach(context: Context) {
         super.onAttach(context)
 
-        if (context is NavigationCommunicator) {
+        if (context is MainActivity.NavigationCommunicator) {
             navigationCommunicator = context
         } else {
             throw RuntimeException("$context must implement NavigationCommunicator")
@@ -751,7 +751,7 @@ class CallsFragment : Fragment(),NavigationView.OnNavigationItemSelectedListener
         }
     }
     private fun sendFeedbackToApi(id: Int, callStatus: String,duration:String) {
-         val context = requireContext()
+        val context = requireContext()
 
         val email = PreferencesHelper.getEmail(context)
         val password = PreferencesHelper.getPassword(context)

@@ -188,4 +188,3 @@ interface NavigationCommunicator {
     fun onNavigate(tag: String)
 }
 
-

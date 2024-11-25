@@ -16,7 +16,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.pixlcallcenterapp.requests.IntrestedcallsRequest
 import com.example.pixlcallcenterapp.responces.Intrested_CallsResponse
 import com.example.pixlcallcenterapp.responces.LeadResponse_from_Intrested
-import com.telecalling.crm.R
+import com.pixl.pixltalknewapp.R
+
 import com.telecalling.crm.adapter.IntrestescallAdapter
 import com.telecalling.crm.services.Api_Interface
 import com.telecalling.crm.services.PreferencesHelper
